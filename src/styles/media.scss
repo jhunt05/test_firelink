@@ -1,0 +1,308 @@
+@mixin slider-btn {
+  background-color: #eaf4f6;
+  opacity: 0.8;
+  color: #515252;
+  border: none;
+  width: 45px;
+  height: 35px;
+  font-size: 20px;
+  position: absolute;
+  z-index: 0;
+}
+
+@media screen and (min-width: 599px) {
+  .header {
+    flex-direction: row; 
+
+    &__contacts {
+      width: 300px;
+      margin-left: 20px;
+    }
+   
+    &__buttons {
+      justify-content: flex-end;
+
+      &_languages {
+        margin-right: 25px;
+
+        & button {
+          height: 44px;
+        }
+      }
+
+      &_currency {
+        margin-right: 15px;
+
+        & button {
+          height: 44px;
+        }
+      }
+    }
+  }
+
+  .slider {
+    display: block;
+    margin-top: 20px;
+    position: relative;
+
+    &__image {
+      position: relative;
+      display: none;
+      width: inherit;
+      height: 365px;
+      z-index: -1;
+
+      &_active {
+        display: block;
+      }
+
+      & img {
+        width: 100%;
+        height: inherit;
+      }
+    }
+
+    &__text {
+      position: absolute;
+      z-index: 2;
+      top: 75px;
+      width: 350px;
+      color: #222222;
+      right: 25px;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      
+      & h2 {
+        font-size: 30px;
+        background-color: #eff8fb;
+        width: max-content;
+        margin-bottom: 15px;
+        padding: 2px;
+      }
+
+      & span {
+        background-color: #eff8fb;
+        padding: 2px;
+      }
+    }
+
+    &__btn-left {
+      @include slider-btn();
+      top: 50%;
+      left: 0;
+    }
+
+    &__btn-right {
+      @include slider-btn();
+      top: 50%;
+      right: 0;
+    }
+
+    &__dots-wrap {
+      position: absolute;
+      width: 120px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      bottom: 13px;
+      right: 0;
+      z-index: 0;
+    }
+
+    &__dot {
+      background-color: #d3e3e2;
+      width: 20px;
+      height: inherit;
+      margin-right: 10px;
+      border-radius: 50%;
+      opacity: 0.9;
+
+      & div {
+        background-color: #495255;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: relative;
+        top: 25%;
+        left: 23%;
+      }
+
+      &_active {
+        background-color: #495255;
+
+        & div {
+          background-color: #d3e3e2;
+        }
+      }
+    }
+  }
+
+  .benefits {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__item {
+      margin-right: 30px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 999px) {
+  .main {
+    padding: 0 100px;
+  }
+
+  .header {
+    justify-content: space-around;
+
+    &__contacts {
+      width: max-content;
+    }
+
+    &__welcome-text {
+      display: block;
+      font-size: 14px;
+  
+      & a {
+        color: #83c8d1;
+      }
+    }
+
+    &__buttons {
+      width: inherit;
+    }
+  }
+
+  .nav {
+    &__icon {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+      background-color: #f5f7f9;
+
+      &_link {
+        padding: 20px;
+        border: none;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        letter-spacing: 1.1px;
+        font-size: 15px;
+        transition: color 0.5s, background-color 1s;
+
+        &:hover {
+          background-color: #78c4cd;
+          color: #fff;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  
+  .logIn {
+    &__content {
+      &_form {
+        margin: 25% auto;
+      }
+    }
+  }
+
+  .signUp {
+    &__content {
+      &_form {
+        margin: 25% auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1279px) {
+  .main {
+    padding: 0 150px;
+  }
+
+  .user {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav {
+    margin-top: 60px;
+  }
+
+  .benefits {
+    flex-wrap: nowrap;
+    justify-content: start;
+
+    &__item {
+      width: 300px;
+    }
+  }
+
+  .logIn {
+    &__content {
+      &_form {
+        margin: 20% auto;
+      }
+    }
+  }
+
+  .signUp {
+    &__content {
+      &_form {
+        margin: 20% auto;
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: 1799px) {
+  .header {
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    &__container {
+      background-color: #f5f7f9;
+    }
+  }
+
+  .main {
+    max-width: 1300px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .benefits {
+    &__item {
+      flex-grow: 1;
+    }
+  }
+
+  .logIn {
+    &__content {
+      &_form {
+        margin: 15% auto;
+      }
+    }
+  }
+
+  .signUp {
+    &__content {
+      &_form {
+        margin: 15% auto;
+      }
+    }
+  }
+}
